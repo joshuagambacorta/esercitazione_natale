@@ -8,6 +8,7 @@ $( document ).ready(function() {
 
     $('#exampleFormControlSelect0').on('change', function() {
         $("#not_disponibility").hide();
+        $("#is_good").show();
         $("#name"). val("")
         $("#surname"). val("")
         $("#n_tickets"). val("1")
@@ -20,9 +21,10 @@ $( document ).ready(function() {
                 concerto: concerto,
             },
             success: function(response) {
-                if(response <= 0){
-                    $(".if_concerto_is_set").hide();
+                var n_ticket = $( "#n_tickets" ).val();
+                if(response == 0){
                     $("#not_disponibility").show();
+                    $("#is_good").hide();
                 }
             },
             error: function(error){
@@ -38,6 +40,27 @@ $( document ).ready(function() {
             success: function(response) {
                 console.log(response)
                 $("#info_concert").html(response);
+            },
+            error: function(error){
+                console.log(error);
+            }
+        });
+    });
+
+    $('#n_tickets').on('change', function() {
+        var concerto =  $('#exampleFormControlSelect0').val()
+        $.ajax({
+            url: './get_disponibility.php',
+            method: 'POST',
+            data: {
+                concerto: concerto,
+            },
+            success: function(response) {
+                var n_ticket = $( "#n_tickets" ).val();
+                if(response < parseInt(n_ticket)){
+                    $("#not_disponibility").show();
+                    $("#is_good").hide();
+                }
             },
             error: function(error){
                 console.log(error);

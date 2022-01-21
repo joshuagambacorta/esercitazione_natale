@@ -44,50 +44,52 @@
                             </select>
                             <br>
                             <div class="if_concerto_is_set">
-                                <hr>
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <span id="info_concert"></span>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-12 text-center">
+                                            <span id="info_concert"></span>
+                                        </div>
                                     </div>
+                                    <br><br>
+                                    <br>
+                                <div id="is_good">
+                                    <h3><strong><i>Aquista qui i tuoi biglietti: </i></strong></h3>
+                                    <br>
+                                    <div class="row">
+                                        <div class="name col-4">
+                                            <label for="name">Nome</label>
+                                            <input type="text" id="name" name="name" class="form-control">
+                                            <small id="errorName">Nome non valido*</small>
+                                        </div>
+                                        <div class="surname col-4">
+                                            <label for="surname">Cognome</label>
+                                            <input type="text" id="surname" name="surname" class="form-control">
+                                            <small id="errorSurname">Cognome non valido*</small>
+                                        </div>
+                                        <div class="n_tickets col-4">
+                                            <label for="n_tickets">Numero biglietti</label>
+                                            <select class="form-control" id="n_tickets" name="n_tickets">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <button type="submit" id="purchase" class="btn btn-outline-primary">Aquista</button>
                                 </div>
-                                <br><br>
-                                <br>
-                                <h3><strong><i>Aquista qui i tuoi biglietti: </i></strong></h3>
-                                <br>
-                                <div class="row">
-                                    <div class="name col-4">
-                                        <label for="name">Nome</label>
-                                        <input type="text" id="name" name="name" class="form-control">
-                                        <small id="errorName">Nome non valido*</small>
-                                    </div>
-                                    <div class="surname col-4">
-                                        <label for="surname">Cognome</label>
-                                        <input type="text" id="surname" name="surname" class="form-control">
-                                        <small id="errorSurname">Cognome non valido*</small>
-                                    </div>
-                                    <div class="n_tickets col-4">
-                                        <label for="n_tickets">Numero biglietti</label>
-                                        <select class="form-control" id="n_tickets" name="n_tickets">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                    </div>
+                                <div class="container pt-4 text-center text-danger" id="not_disponibility">
+                                    <h3><strong><i>Spiacenti i biglietti sono terminati</i></strong></h3>
                                 </div>
-                                <br>
-                                <br>
-                                <button type="submit" id="purchase" class="btn btn-outline-primary">Aquista</button>
                             </div>
                         </form>
                     </div>
                 </div>
 
             </div>
-        </div>
-        <div class="container pt-4 text-center text-danger" id="not_disponibility">
-            <h3><strong><i>Spiacenti i biglietti sono terminati</i></strong></h3>
         </div>
     </body>
 
